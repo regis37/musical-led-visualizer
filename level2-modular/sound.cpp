@@ -10,6 +10,7 @@
 //  throw an error.
 // =============================================================
 
+#include "melody.h"
 #include "sound.h"
 #include "Arduino.h"   // gives access to pinMode, tone, noTone, delay
 
@@ -71,12 +72,12 @@ void soundStop() {
 //    4. Wait 50 ms of silence (articulation gap between notes)
 
 void soundPlayNote(int freq, int duration) {
-  soundPlay(freq);
-  delay(duration);
-  soundStop();
-
-  // Brief silence between notes (musical articulation).
-  // Without this gap, consecutive notes of the same pitch
-  // sound like a single long note — the rhythm disappears.
+  if (freq == NOTE_REST) {
+    delay(duration);   // silence — just wait, no buzzer
+  } else {
+    soundPlay(freq);
+    delay(duration);
+    soundStop();
+  }
   delay(50);
 }
