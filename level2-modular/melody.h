@@ -36,6 +36,16 @@ struct Note {
 #define NOTE_B4  494
 #define NOTE_C5  523
 
+#define NOTE_D5   587
+#define NOTE_E5   659
+#define NOTE_F5   698
+#define NOTE_G5   784
+#define NOTE_A5   880
+#define NOTE_Bb4  466
+
+#define NOTE_REST  0    // silence — no frequency
+#define NOTE_E4    330
+
 
 // ─── DURATION HELPERS ────────────────────────────────────────
 //
@@ -61,7 +71,7 @@ struct Note {
 //    get if you put a full array definition in a .h file that
 //    is included by several .cpp files.
 
-const Note MELODY[] = {
+const Note FRERE_JACQUES[] = {
   // Phrase 1: C D E C  |  C D E C
   {NOTE_C4, BEAT_QUARTER},
   {NOTE_D4, BEAT_QUARTER},
@@ -80,7 +90,219 @@ const Note MELODY[] = {
   {NOTE_G4, BEAT_HALF},
 };
 
-const int MELODY_LENGTH = sizeof(MELODY) / sizeof(MELODY[0]);
+const int FRERE_JACQUES_LENGTH = sizeof(FRERE_JACQUES) / sizeof(FRERE_JACQUES[0]);
+
+ 
+// =============================================================
+//  SONG 1 — Happy Birthday to You
+//  Key: G major | Time: 3/4
+// =============================================================
+const Note HAPPY_BIRTHDAY[] = {
+ 
+  // "Happy Birth - day  to    you"
+  {NOTE_G4,  200},
+  {NOTE_G4,  200},
+  {NOTE_A4,  400},
+  {NOTE_G4,  400},
+  {NOTE_C5,  400},
+  {NOTE_B4,  800},
+ 
+  // "Happy Birth - day  to    you"
+  {NOTE_G4,  200},
+  {NOTE_G4,  200},
+  {NOTE_A4,  400},
+  {NOTE_G4,  400},
+  {NOTE_D5,  400},
+  {NOTE_C5,  800},
+ 
+  // "Happy Birth - day  dear  [name]..."
+  {NOTE_G4,  200},
+  {NOTE_G4,  200},
+  {NOTE_G5,  400},
+  {NOTE_E5,  400},
+  {NOTE_C5,  400},
+  {NOTE_B4,  400},
+  {NOTE_A4,  800},
+ 
+  // "Happy Birth - day  to    you"
+  {NOTE_Bb4, 200},
+  {NOTE_Bb4, 200},
+  {NOTE_A4,  400},
+  {NOTE_C5,  400},
+  {NOTE_D5,  400},
+  {NOTE_C5,  800},
+};
+const int HAPPY_BIRTHDAY_LENGTH = sizeof(HAPPY_BIRTHDAY) / sizeof(HAPPY_BIRTHDAY[0]);
+ 
+ 
+// =============================================================
+//  SONG 2 — Ode to Joy (Beethoven — Symphony No. 9, 4th mvt)
+//  Key: C major | Time: 4/4
+//  Public domain — composed 1824
+// =============================================================
+const Note ODE_TO_JOY[] = {
+ 
+  // Phrase 1
+  {NOTE_E4,  300},
+  {NOTE_E4,  300},
+  {NOTE_F4,  300},
+  {NOTE_G4,  300},
+  {NOTE_G4,  300},
+  {NOTE_F4,  300},
+  {NOTE_E4,  300},
+  {NOTE_D4,  300},
+  {NOTE_C4,  300},
+  {NOTE_C4,  300},
+  {NOTE_D4,  300},
+  {NOTE_E4,  300},
+  {NOTE_E4,  500},   // held
+  {NOTE_D4,  500},   // held
+ 
+  // Phrase 2 (same, different ending)
+  {NOTE_E4,  300},
+  {NOTE_E4,  300},
+  {NOTE_F4,  300},
+  {NOTE_G4,  300},
+  {NOTE_G4,  300},
+  {NOTE_F4,  300},
+  {NOTE_E4,  300},
+  {NOTE_D4,  300},
+  {NOTE_C4,  300},
+  {NOTE_C4,  300},
+  {NOTE_D4,  300},
+  {NOTE_E4,  300},
+  {NOTE_D4,  500},   // held
+  {NOTE_C4,  500},   // held
+ 
+  // Phrase 3
+  {NOTE_D4,  300},
+  {NOTE_D4,  300},
+  {NOTE_E4,  300},
+  {NOTE_C4,  300},
+  {NOTE_D4,  300},
+  {NOTE_E4,  150},
+  {NOTE_F4,  150},
+  {NOTE_E4,  300},
+  {NOTE_C4,  300},
+  {NOTE_D4,  300},
+  {NOTE_E4,  150},
+  {NOTE_F4,  150},
+  {NOTE_E4,  300},
+  {NOTE_D4,  300},
+  {NOTE_C4,  300},
+  {NOTE_D4,  500},   // held
+ 
+  // Phrase 4 (reprise of phrase 1)
+  {NOTE_E4,  300},
+  {NOTE_E4,  300},
+  {NOTE_F4,  300},
+  {NOTE_G4,  300},
+  {NOTE_G4,  300},
+  {NOTE_F4,  300},
+  {NOTE_E4,  300},
+  {NOTE_D4,  300},
+  {NOTE_C4,  300},
+  {NOTE_C4,  300},
+  {NOTE_D4,  300},
+  {NOTE_E4,  300},
+  {NOTE_D4,  500},   // held
+  {NOTE_C4,  500},   // held
+};
+const int ODE_TO_JOY_LENGTH = sizeof(ODE_TO_JOY) / sizeof(ODE_TO_JOY[0]);
+ 
+ 
+// =============================================================
+//  SONG 3 — Tetris Theme (Korobeiniki)
+//  Russian folk song — public domain
+//  One of the most recognised melodies in the world.
+// =============================================================
+const Note TETRIS_THEME[] = {
+ 
+  // Main phrase A
+  {NOTE_E5,  300},
+  {NOTE_B4,  150},
+  {NOTE_C5,  150},
+  {NOTE_D5,  300},
+  {NOTE_C5,  150},
+  {NOTE_B4,  150},
+  {NOTE_A4,  300},
+  {NOTE_A4,  150},
+  {NOTE_C5,  150},
+  {NOTE_E5,  300},
+  {NOTE_D5,  150},
+  {NOTE_C5,  150},
+  {NOTE_B4,  450},   // held
+  {NOTE_C5,  150},
+  {NOTE_D5,  300},
+  {NOTE_E5,  300},
+  {NOTE_C5,  300},
+  {NOTE_A4,  300},
+  {NOTE_A4,  500},   // held
+ 
+  // Main phrase B
+  {NOTE_D5,  300},
+  {NOTE_F5,  150},
+  {NOTE_A5,  300},   // 
+  {NOTE_G5,  150},
+  {NOTE_F5,  150},
+  {NOTE_E5,  450},   // held
+  {NOTE_C5,  150},
+  {NOTE_E5,  300},
+  {NOTE_D5,  150},
+  {NOTE_C5,  150},
+  {NOTE_B4,  300},
+  {NOTE_B4,  150},
+  {NOTE_C5,  150},
+  {NOTE_D5,  300},
+  {NOTE_E5,  300},
+  {NOTE_C5,  300},
+  {NOTE_A4,  300},
+  {NOTE_A4,  400},   // held
+};
+const int TETRIS_THEME_LENGTH = sizeof(TETRIS_THEME) / sizeof(TETRIS_THEME[0]);
+
+// =============================================================
+//  SONG 4 — Super Mario Bros. Overworld Theme
+//  Composer: Koji Kondo (Nintendo, 1985)
+// =============================================================
+const Note MARIO_THEME[] = {
+  // Opening motif
+  {NOTE_E5,  150},
+  {NOTE_E5,  150},
+  {NOTE_REST,150},
+  {NOTE_E5,  150},
+  {NOTE_REST,150},
+  {NOTE_C5,  150},
+  {NOTE_E5,  300},
+  {NOTE_G5,  300},
+  {NOTE_REST,300},
+  {NOTE_G4,  300},
+  {NOTE_REST,300},
+
+  // Main melody
+  {NOTE_C5,  300},
+  {NOTE_REST,150},
+  {NOTE_G4,  300},
+  {NOTE_REST,150},
+  {NOTE_E4,  300},
+  {NOTE_REST,150},
+  {NOTE_A4,  300},
+  {NOTE_B4,  300},
+  {NOTE_Bb4, 150},
+  {NOTE_A4,  300},
+  {NOTE_G4,  200},
+  {NOTE_E5,  200},
+  {NOTE_G5,  200},
+  {NOTE_A5,  300},
+  {NOTE_F5,  150},
+  {NOTE_G5,  150},
+  {NOTE_REST,150},
+  {NOTE_E5,  300},
+  {NOTE_C5,  150},
+  {NOTE_D5,  150},
+  {NOTE_B4,  300},
+};
+const int MARIO_THEME_LENGTH = sizeof(MARIO_THEME) / sizeof(MARIO_THEME[0]);
 
 
 #endif // MELODY_H
